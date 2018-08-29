@@ -1,0 +1,35 @@
+<div>
+	<div ng-hide="collapsed">
+		<div class="jumbotron">
+			<div class="container theme-showcase" role="main"
+				style="padding-left: 10px">
+
+				<div style="float: right">
+					<button class="btn btn-primary" type="button" ng-click="todosLinkClicked($index)">Add New ToDo JSON</button>
+				</div>
+				
+				<br />
+				<h3>TODOS LIST</h3>
+				<br />
+
+				<table class="table table-bordered">
+					<tr>
+						<th><input type="checkbox" name="chk_all" id="chk_all" ng-model="selectAll" ng-change="selectAllTodos()" />Select All</th>
+						<th>Admin Function</th>
+						<th>Description</th>
+						<th></th>
+						<th><button class="btn btn-primary" ng-click="deleteAllTodos()">Delete Selected</button></th>
+					</tr>
+
+					<tr ng-repeat="todos in todosData ">
+						<td><input type="checkbox" name="chk_1" id="chk_1" ng-model="todos.check" ng-change="selectedTodos(todos)" /></td>
+						<td>{{todos.institution }}</td>
+						<td>{{todos.descr }}</td>
+						<td><button class="btn btn-primary" ng-click="todosLinkClicked($index)">Edit</button></td>
+						<td><button class="btn btn-primary" ng-click="deleteTodos(todos.tempId)">Delete</button></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

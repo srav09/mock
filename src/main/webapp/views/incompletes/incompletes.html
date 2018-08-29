@@ -1,0 +1,38 @@
+<div>
+	<div ng-hide="collapsed">
+		<div class="jumbotron">
+			<div class="container theme-showcase" role="main"
+				style="padding-left: 10px">
+				
+					<div style="float: right">
+						<button class="btn btn-primary" type="button"
+							ng-click="incompletesLinkClicked($index)" ng-if="addData">Add New Incompletes JSON</button>
+					</div>
+					<div style="float: right">
+							<button class="btn btn-primary" ng-if="!addData"
+									ng-click="incompletesLinkClicked($index)">Edit</button>
+						</div>
+					<br />
+					<h3>INCOMPLETES LIST</h3>
+					<br />
+					
+					<table class="table table-bordered">
+						<tr>
+							<th></th>
+							<th>Grade In</th>
+							<th>SUBJECT</th>
+						</tr>
+						
+						  <tbody ng-repeat="d in incompletesData.IncompleteDetails">
+						<tr ng-repeat="terms in d.TermDetailVw">
+							<td></td>
+							<td>{{terms.GradeIn}}</td>
+							<td>{{terms.ClassDesc}}</td>
+						</tr>
+						</tbody>
+					</table>
+					
+				</div>
+			</div>
+		</div>
+</div>

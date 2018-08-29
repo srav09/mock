@@ -1,0 +1,28 @@
+<div>
+	<div ng-hide="collapsed">
+		<div class="jumbotron">
+			<div class="container theme-showcase" role="main"
+				style="padding-left: 10px">
+					<div style="float: right">
+						<button class="btn btn-primary" type="button"
+							ng-click="gradesLinkClicked($index)" ng-if="addData">Add New Grades JSON</button>
+					</div>
+					<div style="float: right"><button class="btn btn-primary"
+							ng-click="gradesLinkClicked($index)" ng-if="!addData">Edit</button></div>
+					<br />
+					<h3>GRADES LIST</h3>
+					<br />
+					<table class="table table-bordered">
+						<tr>
+							<th>CLASS</th>
+							<th>SUBJECT</th>
+						</tr>
+						<tr>	
+							<td>{{gradesData.Grades_Data.Name}}</td>
+							<td>{{gradesData.Grades_Data.Emplid}}</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+</div>

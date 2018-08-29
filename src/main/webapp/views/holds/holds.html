@@ -1,0 +1,35 @@
+<div>
+	<div ng-hide="collapsed">
+		<div class="jumbotron">
+			<div class="container theme-showcase" role="main"
+				style="padding-left: 10px">
+
+				<div style="float: right">
+					<button class="btn btn-primary" type="button" ng-click="holdsLinkClicked($index)">Add New Holds JSON</button>
+				</div>
+
+				<br />
+				<h3>HOLDS LIST</h3>
+				<br />
+
+				<table class="table table-bordered">
+					<tr>
+						<th><input type="checkbox" name="chk_all" id="chk_all" ng-model="selectAll" ng-change="selectAllHolds()" />Select All</th>
+						<th>Description</th>
+						<th>Act Term</th>
+						<th></th>
+						<th><button class="btn btn-primary" ng-click="deleteAllHolds()">Delete Selected</button></th>
+					</tr>
+
+					<tr ng-repeat="holds in holdsData ">
+						<td><input type="checkbox" name="chk_1" id="chk_1" ng-model="holds.check" ng-change="selectedHolds(holds)" /></td>
+						<td>{{ holds.descr1 }}</td>
+						<td>{{ holds.srvcIndActiveDt }}</td>
+						<td><button class="btn btn-primary" ng-click="holdsLinkClicked($index)">Edit</button></td>
+						<td><button class="btn btn-primary" ng-click="deleteHolds(holds.tempId)">Delete</button></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,39 @@
+<div>
+	<div ng-hide="collapsed">
+		<div class="jumbotron">
+			<div class="container theme-showcase" role="main"
+				style="padding-left: 10px">
+				
+					<div style="float: right">
+						<button class="btn btn-primary" type="button" ng-click="classesLinkClicked($index)"  ng-disabled="!(addData)">Add New Classes JSON</button>
+					</div>
+					<br />
+					<h3>CLASS LIST</h3>
+					<br />
+					
+					<table class="table table-bordered">
+						<tr>
+							<th></th>
+							<th>classNumber</th>
+							<th>SUBJECT</th>
+							<th></th>
+							<th></th>
+						</tr>
+						
+						<tbody>
+						<tr ng-repeat="classes in classesData.academicProfile.personCourseSectionList ">
+							<td></td>
+							<td>{{classes.courseSection.classNumber}}</td>
+							<td>{{classes.courseSection.subject}}</td>
+							<td><button class="btn btn-primary" ng-show="showButton(classesData.academicProfile.personCourseSectionList,$index)"
+								  	                            ng-click="classesLinkClicked($index)">Edit</button></td>
+									
+							<td><button class="btn btn-primary" ng-show="showButton(classesData.academicProfile.personCourseSectionList,$index)"
+							                                    ng-click="deleteClasses(classesData.tempId)">Delete</button></td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+</div>

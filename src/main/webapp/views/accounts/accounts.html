@@ -1,0 +1,33 @@
+<div>
+	<div ng-hide="collapsed">
+		<div class="jumbotron">
+			<div class="container theme-showcase" role="main"
+				style="padding-left: 10px">
+					<div style="float: right">
+						<button class="btn btn-primary" type="button"
+							ng-click="accountsLinkClicked($index)"  ng-disabled="!(addData)">Add New Accounts JSON</button>
+					</div>
+					
+				<br />
+				<h3>ACCOUNT LIST</h3>
+				<br />
+
+				<table class="table table-bordered">
+					<tr>
+					<th>Account Balance</th>
+					<th></th>
+					<th></th>
+					</tr>
+					<tr>
+					<td>{{accountsData.balance}}</td>
+					<td><button class="btn btn-primary" ng-show="showButton(accountsData)"
+								ng-click="accountsLinkClicked(accountsData)">Edit</button></td>
+					<td><button class="btn btn-primary" ng-show="showButton(accountsData)"
+							ng-click="deleteAccounts(accountsData.tempId)">Delete</button></td>
+						
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

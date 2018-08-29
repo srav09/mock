@@ -1,0 +1,32 @@
+<div>
+    <div ng-hide="collapsed">
+        <div class="jumbotron">
+            <div class="container theme-showcase" role="main"
+                style="padding-left: 10px">
+                    <div style="float: right">
+                        <button class="btn btn-primary" type="button" ng-click="profileLinkClicked($index)"  
+                                                                      ng-disabled="!(addData)">Add New Profile JSON</button>
+                    </div>
+                    
+                <br />
+                <h3>PROFILE LIST</h3>
+                <br />
+
+                <table class="table table-bordered">
+                    <tr>
+                    <th>User</th>
+                    <th></th>
+                    <th></th>
+                    </tr>
+                    <tr>
+                    <td>{{profileData.name[0].firstName + ' ' +profileData.name[0].lastName}}</td>
+                    <td><button class="btn btn-primary" ng-show="showButton(profileData)" ng-click="profileLinkClicked(profileData)">Edit</button></td>
+                    <td><button class="btn btn-primary" ng-show="showButton(profileData)" 
+                                                        ng-click="deleteProfile(profileData.tempId)">Delete</button></td>
+                    </tr>
+                </table>
+                
+            </div>
+        </div>
+    </div>
+</div>
